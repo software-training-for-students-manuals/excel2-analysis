@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- Manual title -->
+        <title>STS Manual</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Software manual provided by Software Training for Students at the University of Wisconsin.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' id='uwmadison-fonts-css'  href='https://brand.wisc.edu/content/themes/uw-theme/dist/fonts/uw160/fonts.css?ver=1.1.1' type='text/css' media='all' /><link rel="stylesheet" type="text/css" href="../master-files/css/stylesheet.css">
+        <script src="../master-files/highlight.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="../master-files/smooth-scroll.js"></script>
+        <script src="../master-files/primary-functions.js"></script>
+        <script src="../master-files/ga.js"></script>
+        <script src="../master-files/"></script>
+    </head>  
+
+<body>
+    <div class="manual-front-page">
+        <div id="coverpage-title">
+            <h1>Microsoft Excel 2:</h1>
+            <h2>Data Analysis</h2>
+        </div>
+        <div id="about-page"></div>
+        <div id="outline"></div>
+    </div>
+    <section class="topic"> 
+    <h1>Introduction</h1>
+    <p>Welcome to Excel 2: Analysis! This course will build upon the basic skills you learned in the Excel 1 class. The focus of this course is on the advanced tools and functions Excel offers for analyzing large quantities of data.</p>
+    <h2>About this Class</h2>
+    <p>Excel 2: Analysis is one of three intermediate Excel classes offered by Software Training for Students. These three classes (Functions, Data Visualization, and Analysis) are designed so you can take them independently and in any order. After this class, you will be able to utilize powerful features of Excel which allow you to analyze data faster and easier.</p>
+    <p>As of 2016, Microsoft Office has combined its PC and Mac versions to provide the same experience to all users. However, one major difference remains, that it, the use of the Control and Command keys on Windows and Mac respectively for keyboard shortcuts. These keys essentially perform the same function and are used in conjunction with other keys to perform various tasks quicker. Your instructor will mention these interchangeably.</p>
+    <img src="images/ctrl-cmd.png" alt="Windows Control key vs Mac Command key">
+    <h2>Learning Outcomes</h2>
+    <p>By the end of this workshop, students should have a variety of new skills and competencies in Excel and feel comfortable working with the tools Excel has to offer for data analysis.</p>
+    <p>After completing this workshop, students should know:</p>
+    <ul>
+        <li>
+            <p>When linear vs. nonlinear solution approaches are useful</p>
+        </li>
+        <li>
+            <p>Why checking function solutions for correctness is necessary and how to make this evaluation</p>
+        </li>
+        <li>
+            <p>Why constraints are necessary to optimizing the Solver function</p>
+        </li>
+        <li>
+            <p>About the Data Analysis ToolPak and its various uses</p>
+        </li>
+        <li>
+            <p>When a histogram is appropriate in data analysis</p>
+        </li>
+    </ul>
+    <p>And should be able to:</p>
+    <ul>
+       <li>
+           <p>Use data validation in practical situations</p>
+       </li>
+        <li>
+            <p>Use the What-If Analysis, Goal Seek, and Solver functions accurately</p>
+        </li>
+        <li>
+            <p>Use a series in place of Autofill</p>
+        </li>
+        <li>
+            <p>Find and activate add-ons in Excel</p>
+        </li>
+        <li>
+            <p>Use the Descriptive Statistics function</p>
+        </li>
+        <li>
+            <p>Format a histogram effectively</p>
+        </li>
+    </ul>
+    <h2>Required Skills</h2>
+    <p>You should have a basic knowledge of the Windows environment, and have taken Excel 1, or have equivalent experience.</p>
+    <p>Key background skills needed include familiarity with the following:</p>
+    <ul>
+        <li>
+            <p>Common terminology: rows, columns and cells</p>
+        </li>
+        <li>
+            <p>Entering and editing data</p>
+        </li>
+        <li>
+            <p>Basic formulas: addition, subtraction, product, division, etc.</p>
+        </li>
+        <li>
+            <p>Built-in functions: sum, average, etc.</p>
+        </li>
+    </ul>
+    <h2>Other Requirements</h2>
+    <p>In addition to this manual, you will need to download the class files for the course and have access to a computer with Microsoft Office 2016. The class files can be downloaded at the STS website or will be provided by your instructor.</p>
+    <p>If you are working on an older version of Office, some features may be located in different locations or, on rare occasions, may be unavailable altogether. In such cases, setting up an Ask-a-Trainer appointment with an STS trainer via the STS website would allow you to work through your specific questions. Otherwise, Microsoft Office is also available on most campus computer labs. Office 2016 can also be acquired free of cost as a student here: <b><a href="https://it.wisc.edu/services/office-365/">it.wisc.edu/services/office-365/</a></b> </p>
+    <div class="page-break"></div>
+    <p>To begin, find the <b>Excel-2-Analysis-2016.xlsx</b> file from the downloaded Class Files and open it. Examine the various exercises in the worksheets.</p>
+    </section>
+    
+   <section class="topic">
+    <h1>Data Validation</h1>
+    <p>The data validation tool in Excel is useful for making sure the right type of data is being entered into your spreadsheets. This can help avoid simple human error when entering in lots of data values or to make sure others you may pass a spreadsheet on to are filling the right types of information into cells. In this section, we’ll be analyzing an example in which you’re running a bakery trying to keep track of special orders.</p>
+     <div class="tool-reference">
+     <h3>Data Validation</h3>
+     <img src="images/reference-validation.png" alt="Data Validation tool icon">
+     <p>The Data Validation tool is used to apply rules to cells that limits the types of data that may be entered into them. This is good for avoiding entry-error on workbooks with lots of data.</p>
+    </div>
+    <h2>Drop-Down Lists</h2>
+    <p>Navigate to the Data Validation worksheet. In this example, you’ve asked your employees to log all new special orders coming into your bakery on this spreadsheet. Since you only offer three types of cakes and frostings, it’s easiest in this case to provide a drop-down list for employees to choose from when filling out these columns.</p>
+    <ol class="instruction-list">
+        <li>
+            <p>Select cells <span class="type-text">B6:B11</span>.</p>
+        </li>
+        <li>
+            <p>Without deselecting those cells, switch to the Data tab in the ribbon and find the Data Validation tool.</p>
+        </li>
+         <img src="images/validation-dropdown-1.png" alt="Location of Data Validation tool in the Excel ribbon">
+        <li>
+            <p>In the Allow field, select the List option.</p>
+        </li>
+         <img src="images/validation-dropdown-2.png" alt="Data validation tool set to List">
+        <li>
+            <p>For Source, select cells <span class="type-text">I7:I9</span>.</p>
+        </li>
+        <li>
+            <p>Press Ok</p>
+        </li>
+    </ol>
+    <p>Now if you select cells in the Cake Flavor column, you’ll see a drop-down symbol appear at the right, where you’re able to input which cake flavor the customer has requested.</p>
+    <img src="images/validation-dropdown-3.png" alt="Drop-down list in spreadsheet with cake flavor options">
+    <p>You can also test what happens when you try and type anything else into those columns; you’ll see Excel comes back with an error because you’ve specified only drop-down selections can go in those cells.</p>
+    <img src="images/validation-dropdown-4.png" alt="Error message given for invalid entry">
+    <p>Instead of selecting cells for the Source field, you can also enter in your own data values.</p>
+    <ol class="instruction-list">
+        <li>
+            <p>Select cells <span class="type-text">C6:C11</span>.</p>
+        </li>
+        <li>
+            <p>Navigate to the Data Validation screen</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>This time, take note of the Clear All button; this will clear any applied data validation rules to all cells you have selected.</p>
+                </li>
+            </ol>
+        </li>
+         <img src="images/validation-misc-1.png" alt="Clear All button in Data Validation tool menu">
+        <li>
+            <p>Under Allow, select the List option again.</p>
+        </li>
+        <li>
+            <p>This time, instead of selecting input cells for the Source, type in the frosting flavors the bakery offers, separated by commas.</p>
+        </li>
+        <img src="images/validation-dropdown-5.png" alt="Frosting flavors typed into Source field, separated by commas">
+        <li>
+            <p>Hit Ok</p>
+        </li>
+    </ol>
+    <p>You end up with the same resullt as the first time, just by typing in your own options instead of referencing other cells.</p>
+    <img src="images/validation-dropdown-6.png" alt="Drop-down list in spreadsheet with frosting flavor options">
+    <h2>Text Length</h2>
+    <p>Aside from drop-down menus, the data validation tool is also able to regulate the length of text a person is allowed to enter into a cell. In this example, we don’t want to accidentally record a phone number wrong and end up with less than 7 digits or more than 9.</p>
+    <ol class="instruction-list">
+        <li>
+            <p>Select cells <span class="type-text">D6:D11</span>.</p>
+        </li>
+        <li>
+            <p>In the Allow drop-down in the Data Validation screen, select Text length.</p>
+        </li>
+        <li>
+            <p>For minimum, enter "7" and maximum, "10".</p>
+        </li>
+         <img src="images/validation-length-1.png" alt="Filled out screen in Data Validation tool">
+        <li>
+            <p>This time, switch to the Error Alert tab before accepting.</p>
+        </li>
+        <li>
+            <p>In the Title field, type "Invalid Number".</p>
+        </li>
+        <li>
+            <p>For the Error message, enter in a message telling the user to type a valid phone number between 7 and 10 digits.</p>
+        </li>
+        <img src="images/validation-length-2.png" alt="Filled out Error Alert screen">
+        <div class="good-to-know">
+            <p>There are three types of Error Alerts available to use in the Style drop-down menu:</p>
+            <ul>
+                <li><strong>Stop</strong> will force the user to go back and change the invalid data.</li>
+                <li><strong>Warning</strong> will warn the user they're entering incorrect information, but will allow them to keep changes to the cell.</li>
+                <li><strong>Information</strong> is a less powerful warning and will still allow changes to the cell in the event of an error.</li>
+            </ul>
+        </div> 
+        <li>
+            <p>Press Ok</p>
+        </li>
+    </ol>
+    <p>Now, if we test this new data validation we’ve created, you’ll see entering any number that isn’t between 7 and 10 digits will result in an error with the personalized message we just gave it. The Stop error won’t allow any text not meeting these requirements to be inputted into these cells now.</p>
+    <img src="images/validation-length-3.png" alt="Stop error in spreadsheet">
+    <h2>Time and Date Validation</h2>
+    <p>Finally, we’ll be looking at restricting dates and times using the data validation tool. It’s store policy not to take orders more than 90 days out, and people are only allowed to pick up their orders during regular store hours, so let’s make sure the spreadsheet won’t accept any dates or times outside those restrictions.</p>
+    <ol class="instruction-list">
+        <li>
+            <p>Select cells <span class="type-text">E6:E11</span>.</p>
+        </li>
+        <li>
+            <p>In the Data Validation tool, select Time under the Allow tool.</p>
+        </li>
+        <li>
+            <p>For Start time, enter "10:00" and End time, "17:00".</p>
+        </li>
+        <img src="images/validation-time-1.png" alt="Filled out Start and End time fields in Data Validation tool">
+        <li>
+            <p>This time, switch to the Input Message tab. This will allow us to personalize a message for the user of the spreadsheet to let them know the format they need to follow.</p>
+        </li>
+        <li>
+            <p>Under Title, type "Time of Pickup".</p>
+        </li>
+        <li>
+            <p>For the Input message blank, type "Please enter a time between 10:00 AM and 5:00 PM".</p>
+        </li>
+        <img src="images/validation-time-2.png" alt="Filled out Input Message screen">
+        <li>
+            <p>Hit Ok</p>
+        </li>
+    </ol>
+    <p>Notice how clicking on a cell under the Time of Pickup column now shows the short message we included to give the user information about the kind of data they should be entering. Once again, feel free to test how this data validation works. For the Time validation, Excel will now only accept times between 10:00 AM and 5:00 PM written in either that format or in military time.</p>
+    <img src="images/validation-time-3.png" alt="Incorrect and correct formatting for time entry">
+    <p>Date validation is a very similar process, but this time we'll be working a function into the Start and End fields.</p>
+    <ol class="instruction-list">
+        <li>
+            <p>Select cells <span class="type-text">F6:F11</span>.</p>
+        </li>
+        <li>
+            <p>Navigate to the Data Validation tool once more and select Date from the Allow drop-down menu.</p>
+        </li>
+        <li>
+            <p>Under Start date, write "=TODAY()" and for End date, "=TODAY()+90".</p>
+        </li>
+        <img src="images/validation-date-1.png" alt="Filled out Start and End date fields">
+        <li>
+            <p>Navigate to the Input Message and Error Settings tabs and enter in appropriate messages.</p>
+        </li>
+        <li>
+            <p>Press Ok</p>
+        </li>
+    </ol>
+    <p>Now Excel will only allow dates that are today or later for the pickup. This will ensure on any given day, an employee can only enter in dates within 90 days from the day they’re entering the order in. This is the benefit of writing functions into the arguments of the Data Validation tool, as it gives a higher degree of flexibility when setting conditions for more complex situations.</p>
+   </section>
+
+   <section class="topic"> 
+    <h1>Input Tables</h1>
+    <p>Creating tables in Excel can make managing and analyzing hypothetical data very easy. In this section, we will use a table with two inputs to analyze how the outcomes of a final exam score and project score will affect our overall semester grade. In other words, we can create a table that contains all possible outcomes for our exam and project grades and have Excel calculate our final semester grade based on that table.</p>
+    <h2>"What-If" Data Table</h2>
+    <p>Navigate to the Two Input worksheet. This section explains how to use “What-If” Data Tables, which is an available tool through “What-If” Analysis.</p>
+    <img src="images/input-whatif-1.PNG" alt="Initial grades for What-If analysis">
+    <p>In this example, it is the end of the semester. For this class, we have already completed six homework assignments and three exams whose grades are already specified in the worksheet. The only items left to be completed and graded are the final exam and a final project. We want to know what our final grade would be depending on what grade we receive on these two remaining assignments.</p>
+    <p>We still have not completed our project or final exam, but we need some values as starting points to calculate our hypothetical final grade.</p>
+    <ol class="instruction-list">
+        <li>
+            <p>In cells <span class="type-text">F5</span> and <span class="type-text">G5</span>, enter a value of 80% for the Project grade and 85% for the Final Exam grade.</p>
+            <p>Now we must write an equation to calculate our final grade as shown below. Here, we sum the products of the different grade components with their respective weights.</p>
+        </li>
+        <li>
+            <p>In cell <span class="type-text">K8</span>, Insert the formula <span class="type-text">=0.1*B11+0.4*E8+0.2*F5+0.3*G5</span>.</p>
+        </li>
+        <img src="images/input-whatif-2.PNG" alt="Calculated semester grade">
+        <li>
+            <p>Press Enter</p>
+        </li>
+    </ol>
+    <p>Again, remember that the project and final exam grades are just guesses so that we can write a complete formula for our semester grade calculation. Now that we have done that, we can fill in the "What-if" table.</p>
+    <h3>Filling a Series of Data</h3>
+    <p>This exercise explains how to fill in the data table with possible values for “What-If” analysis. This “What-If” table has an empty row along the top to fill in with hypothetical project grades and an empty column on the left to fill in with hypothetical exam grades. Let’s use a few Auto Fill features to put in the grades.</p>
+    <img src="images/input-whatif-3.PNG" alt="Empty What-If table">
+    <ol class="instruction-list">
+        <li>
+            <p>In cell <span class="type-text">G20</span>, type 0.</p>
+        </li>
+        <li>
+            <p>In cell <span class="type-text">H20</span>, type 10.</p>
+            <img src="images/input-whatif-4.PNG" alt="Project grade row with first two cells filled in">
+            <p>These are both automatically changed into percentages due to the number formatting of the cells.</p>
+        </li>
+        <li>
+            <p>Select cells <span class="type-text">G20</span> and <span class="type-text">H20</span> and Autofill the selection until cell <span class="type-text">Q20</span>. This completes the series from 0% to 100% in increments of 10%.</p>
+        </li>
+        <img src="images/input-whatif-5.PNG" alt="Completed project grade row">
+        <div class="sidebar-note">
+            <h2>Series... dialog box</h2>
+            <p>The Series dialog box let's us instruct Excel how to fill in the cells we had selected based on the given starting value.</p>
+            <p>We have a column selected so we leave &quot;Series in Columns.&quot; We also want our hypothetical grades to be evenly spaced we leave Type as "Linear." Stop value can be ignored because we want the entire range we selected to be filled. The Step value increases each consecutive cell by that specified amount until all the selected cells are filled.</p>
+        </div>
+        <li>
+            <p>In cell <span class="type-text">F21</span>, type 0.</p>
+        </li>
+        <li>
+            <p>Select cells <span class="type-text">F21:F41</span>.</p>
+        </li>
+        <img src="images/input-whatif-6.PNG" alt="Empty final exam grade column">
+        <li>
+            <p>Navigate to the Home tab and fine the Fill button. From the drop-down menu, select Series....</p>
+        </li>
+        <img src="images/input-whatif-7.PNG" alt="Highlighted Series option from Fill drop-down menu">
+        <li>
+            <p>Specify a Step value of 0.05, leaving all the other options as is, and click OK.</p>
+            <img src="images/input-whatif-8.PNG" alt="Filled out Series options menu">
+            <p>Excel automatically completes the columns by incrementing each cell by 5% to the end.</p>
+        </li>
+    </ol>
+    <img src="images/input-whatif-9.PNG" alt="Completed final exam grade column">
+    <h3>Performing a What-If Analysis</h3>
+    <p>The data table is almost ready perform the “What-If Analysis.” This allows us to iteratively solve a formula based on parameters supplied to it by a table. Our semester grade calculation is a perfect use for it. In order for a ‘What-If’ table to work properly, we must specify a specific equation that we want to alter the values of. For this example, we will use the Semester Grade formula in K8 and use “What-If” Analysis to see how our project and final exam grades will affect our semester grade.</p>
+    <ol class="instruction-list">
+        <li>
+            <p>In cell <span class="type-text">F20</span>, type <span class="type-text">=K8</span> and press Enter.</p>
+        </li>
+        <img src="images/input-whatif-10.PNG" alt="Cell F20 with =K8 formula written in it">
+        <li>
+            <p>Select cells <span class="type-text">F20:Q41</span> (the entire table).</p>
+        </li>
+        <img src="images/input-whatif-11.PNG" alt="Highlighted final exam vs. project grade table">
+        <li>
+            <p>Switch to the Data tab in the ribbon and find What-If Analysis under the Forecast panel.</p>
+        </li>
+        <div class="tool-reference">
+            <h3>What-If Analysis</h3>
+            <img src="images/reference-whatif.png" alt="What-If Analysis tool icon">
+            <p>The What-If Analysis tool includes Scenario Manager, Goal Seek, and Data Manager, all of which are tools to visualize "what if" a scenario played out with your data. This tool is good for predicting different outcomes based on the data you provide.</p>
+        </div>
+        <li>
+            <p>Select Data Table from the What-If Analysis drop-down menu.</p>
+            <p>In Row input cell, we want to enter the project grade, because this is the first variable we want to vary in our semester grade equation.</p>
+        </li>
+        <img src="images/input-whatif-12.PNG" alt="Location of Data Table option under What-If Analysis drop-down menu">
+        <li>
+            <p>Click in the Row input cell field and then click cell <span class="type-text">F5</span> (project) in the workspace.</p>
+            <p>In Column input cell, we want to enter the Final Exam grade, because this is the second variable we want to vary in our semester grade equation.</p>
+        </li>
+        <li>
+            <p>Click in the Column input cell field and then click in cell <span class="type-text">G5</span> (final exam) in the workspace.</p>
+        </li>
+        <img src="images/input-whatif-13.PNG" alt="Completed Row and Column input fields in Data Table tool">
+        <li>
+            <p>Click OK.</p>
+        </li>
+    </ol>
+    <p>The table is now filled out with many possible values for our final semester grade. We can double check our results by finding our original guess values for the project (80%) and final exam (85%) and see if they match our original semester grade (85.95%).</p>
+    <img src="images/input-whatif-14.PNG" alt="Completed two input table">
+    <p>You have now successfully completed a two input table!</p>
+    </section>
+    
+    <section class="topic">
+    <h1>Goal Seek</h1>
+    <p>Excel has tools available that can be used to solve both simple and complex mathematical equations. We will look at one of these tools now called Goal Seek. Excel’s Goal Seek feature allows you to alter the input values in a formula in order to find out what the results will be. When Goal Seek is used properly, we can use it to solve algebraic equations.</p>
+    <p>Switch to the Goal Seek worksheet for this section.</p>
+    <p>The Goal Seek function has three parameters:
+        </p>
+            <ul>
+                <li>
+                    <p>Set cell: This is the cell whose value is changed to the goal value defined in the To value form.</p>
+                </li>
+                <li>
+                    <p>To value: The goal value is specified here.</p>
+                </li>
+                <li>
+                    <p>By changing cell: This cell's value is used as a variable which is changed so as to satisfy the goal value in the Set cell.</p>
+                </li>
+            </ul>
+            <h2>Calculation of Semester Grades</h2>
+            <p>For our first example, we will go back to the semester grade problem and calculate the exact score we need on the test to receive an A (90%) for the semester using Goal Seek. Before we begin, navigate to cell G10 to view the formula we will be working with. It should look familiar, as it is similar to the semester grade calculation that we have used for input tables. The following exercise explains how Goal Seek can be used to calculate theoretical results for our data.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Click in cell <span class="type-text">G10</span>, the semester grade. This is the cell we will be changing.</p>
+                </li>
+                <li>
+                    <p>From the Data tab in the ribbon, find What-If Analysis under the Forecast panel.</p>
+                </li>
+                <img src="images/goalseek-grades-1.PNG" alt="Location of Goal Seek tool under What-If Analysis drop-down menu">
+                <li>
+                    <p>Select Goal Seek from the What-If Analysis drop-down menu.</p>
+                </li>
+                <li>
+                    <p>In the Set cell form, input cell <span class="type-text">$G$10</span>.</p>
+                </li>
+                <li>
+                    <p>In the To value form, type 0.90.</p>
+                </li>
+                <li>
+                    <p>In the By changing cell form, input cell <span class="type-text">$H$4</span>.</p>
+                    <img src="images/goalseek-grades-2.PNG" alt="Filled out Goal Seek tool options">
+                    <p>Here we set the semester grade to the desired target of 90% by changing the final exam score.</p>
+                </li>
+                <li>
+                    <p>Click OK twice</p>
+                </li>
+            </ol>
+            <img src="images/goalseek-grades-3.PNG" alt="Final Exam cell with new calculated value of 91.57%">
+            <p>We now know that we need to score a 91.57% or better on the final exam in cell <span class="type-text">H4</span> to receive an A for the semester.</p>
+            <h2>Calculation of Loan Payments</h2>
+            <p>This exercise explains how to use Goal Seek to evaluate a loan payment. Here, we will work with a loan that we have taken out. We have taken out a $100,000 loan at a yearly interest rate of 7% that we intend to pay off in four years (48 months). Right now, our current monthly payment is $2394.62. However, we can only afford to pay $2000 a month on our loan and want to figure out how long it will take us to pay it off.</p>
+            <ol class="instruction-list">
+                <div class="sidebar-note">
+                    <h2>Payment function</h2>
+                    <p>We have used the Excel function PMT to calculate each monthly payment for the loan. The payment function works as follows:</p>
+                    <p>=PMT(interest rate on loan, total amount of payments to make on loan, initial loaned amount)</p>
+                </div>
+                <li>
+                    <p>Select cell <span class="type-text">B21</span> and click on Goal Seek as done previously.</p>
+                </li>
+                <li>
+                    <p>In the Set cell form, input cell <span class="type-text">$B$21</span>.</p>
+                </li>
+                <li>
+                    <p>In the To value form, type 2000.</p>
+                </li>
+                <li>
+                    <p>In the By changing cell form, input cell <span class="type-text">$B$19</span>.</p>
+                   <img src="images/goalseek-loan-1.PNG" alt="Filled out Goal Seek tool options">
+                    <p>Here, we are changing our monthly payment to the desired payment we want to make by changing the amount of time it will take us to pay off the loan.</p>
+                </li>
+                <li>
+                    <p>Click OK twice</p>
+                </li>
+            </ol>
+            <img src="images/goalseek-loan-2.PNG" alt="# of payments cell with new calculated value of 59.3">
+            <p>We can see that it will take us about 59.3 months to pay off our loan with $2000/month payments. Since we don’t make a payment at 0.3 months, we will round it up to 60 months which comes to 5 years. Not bad!</p>
+            <h2> A Physics Problem</h2>
+            <p>For our last “What-If Analysis” example we will solve a physics problem. We want to figure out how far we can throw a ball before it hits the ground. We’ll say we can throw at about 15 m/sec (roughly 34 mph). Click on cells <span class="type-text">B30</span> and <span class="type-text">B31</span> to see how we calculated the horizontal and vertical velocity of the ball. Don’t worry about getting too absorbed in the physics, but notice the use of the RADIANS function that converted our measurement of the angle we can throw at from degrees to radians. To solve this problem, we should set our vertical velocity to the negative of its initial value by changing the amount of time the ball has been in the air. When our vertical velocity is at the opposite of this value, we know that the ball has landed.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Select cell <span class="type-text">B31</span>. This corresponds to our vertical velocity.</p>
+                </li>
+                <li>
+                    <p>Find Goal Seek once again and click on it.</p>
+                </li>
+                <li>
+                    <p>In the Set cell form, input cell <span class="type-text">$B$31</span>.</p>
+                </li>
+                <li>
+                    <p>In the To value form, type -11.49.</p>
+                </li>
+                <li>
+                    <p>In the By changing cell form, input cell <span class="type-text">$B$28</span>.</p>
+                    <img src="images/goalseek-physics-1.PNG" alt="Filled out Goal Seek tool options">
+                    <p>Here, we are setting the vertical velocity to its final value when the ball hits the ground by changing the time it takes for the ball to hit the ground. We can use this information to see how far we can throw the ball.</p>
+                </li>
+                <li>
+                    <p>Click OK twice</p>
+                </li>
+            </ol>
+            <img src="images/goalseek-physics-2.PNG" alt="Time (sec) cell with new calculated value of 2.34">
+            <p>We can see now that it will take the ball 2.34 seconds to hit the ground, and we can throw the ball 23 meters (about 74 feet).</p>
+            <h2>Goal Seek Review</h2>
+            <p>Here are few things to remember about Goal Seek before we move on:</p>
+            <ul>
+                <li>
+                    <p>Since Goal Seek is used to solve equations, always make sure the Set cell has an equation or formula in it, i.e., something that will vary based on other numbers.</p>
+                </li>
+                <li>
+                    <p>To value is the value you want, i.e., your goal.</p>
+                </li>
+                <li>
+                    <p>By changing cell is a variable that changes in order to enable the previous two arguments.</p>
+                </li>
+            </ul>
+            <p>However, Goal Seek is limited in its equation solving abilities as it can only solve one equation, and you cannot add any constraints or limits on your solution. Our next topic, the Solver, will allow you to solve multiple equations with multiple constraints.</p>
+            </section>
+            
+            <section class= "topic">
+            <h1>Solver</h1>
+            <p>This section explains how to use Solver to solve multiple equations at the same time. Goal Seek is an excellent resource for single variable solutions and simple formulas. But when multiple variables are introduced, Goal Seek is not as an effective of a tool as another built-in program called Solver. Solver is part of an Add-In to Excel, meaning that we need to check and make sure we have that Add-In installed.</p>
+            <p>Before we learn about Add-ins in the following section, switch to the Solver worksheet in your Excel workbook.</p>
+            <h2>Add-Ins</h2>
+            <p>Add-Ins are small programs that add additional functionality to Excel. These may be created by Microsoft or a third-party in order to provide tools that more proficient users of Excel may require. We first need to check and make sure the add-in is active on your computer.</p>
+            <p>Add-Ins are small programs that add additional functionality to Excel. These may be created by Microsoft or a third-party in order to provide tools that more proficient users of Excel may require. We first need to check and make sure the add-in is active on your computer.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Switch to the File tab and click Options.</p>
+                </li>
+               <img src="images/solver-addin-1.PNG" alt="Highlighted Options button in File tab">
+                <li>
+                    <p>Navigate to the Add-ins options</p>
+                </li>
+                <img src="images/solver-addin-2.PNG" alt="Add-ins menu with Go... button highlighted">
+                <li>
+                    <p>Find the Manage drop-down menu, select Excel Add-ins and click Go....</p>
+                </li>
+                <img src="images/solver-addin-3.PNG" alt="Add-ins management screen with Analysis ToolPak and Solver Add-in checked">
+                <li>
+                    <p>From the list of available add-ins, check the Analysis ToolPak and Solver Add-In, and click OK.</p>
+                </li>
+            </ol>
+            <p>These Add-ins can now be found in the Data tab under the Analyze section. The process of loading the Add-ins into Excel may be slow so please be patient. If you are prompted to install the Add-ins, go ahead and click Yes to install them.</p>
+            <img src="images/solver-addin-4.PNG" alt="Analyze section of Data tab">
+            <h2>One-Variable Math Example</h2>
+            <p>In Example 1, we will solve the equation "y=x-5" for x. This is very similar to how we used Goal Seek to solve equations, except for this example we will use the Solver tool.</p>
+            <p>Like Goal Seek, Solver needs both a guess value and a formula to evaluate.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>In cell B5, type a guess value for x, such as 3.</p>
+                </li>
+                <li>
+                    <p>In cell B6, type the formula <span class="type-text">=B5-5</span>.</p>
+                    <img src="images/solver-math-one-1.PNG" alt="Cell B6 with value of -2 from formula =B5-5">
+                    <p>We will now use Solver to find the value of x that yields zero as the y value.</p>
+                </li>
+                <li>
+                    <p>Navigate to the Data tab.</p>
+                </li>
+                <li>
+                    <p>In the Analyze section, select Solver.</p>
+                </li>
+                <div class="tool-reference">
+                    <h3>Solver</h3>
+                    <img src="images/reference-solver.png" alt="Solver tool icon">
+                    <p>Similar to Goal Seek, Solver is a powerful tool for generating solutions for systems of equations. Because of the nature of many real-life problems having dozens of possible solutions, Solver is a good tool for narrowing down possible solutions to find a best fit for the problem.</p>
+                </div>
+                <li>
+                    <p>Click Reset All to remove any previous input.</p>
+                </li>
+                <li>
+                    <p>Input the following into the forms:</p>
+                    <ol class="instruction-list">
+                        <li>
+                            <p>Set Objective: <span class="type-text">$B$6</span></p>
+                        </li>
+                        <li>
+                            <p>To: Value Of: 0</p>
+                        </li>
+                        <li>
+                            <p>By Changing Variable Cells: <span class="type-text">$B$5</span></p>
+                        </li>
+                        <li>
+                            <p>Solving Method: Simplex LP</p>
+                        </li>
+                    </ol>
+                </li>
+                <img src="images/solver-math-one-2.PNG" alt="Complated Solver Parameters screen">
+                <p>By setting the value of B6 equal to zero and changing cell B5 (or x guess) we will gain our solution for x when y = 0.</p>
+                <li>
+                    <p>Click Solve</p>
+                </li>
+                <li>
+                    <p>Another dialogue box prompts to keep or discard the solution. Click OK too keep the solution if it seems logical.</p>
+                </li>
+            </ol>
+            <img src="images/solver-math-one-3.PNG" alt="Solver prompt to keep or discard solution">
+            <p>We have now solved y = x – 5 for y = 0 using both Goal Seek and Solver. For this simple example, Goal Seek is a more efficient option but both get the same solution. Let’s look at a multi-variable set of equations in order to see the real power of Solver.</p>
+            <h2>Multi-Variable Example</h2>
+            <p>Example 2 shows two equations, whose lines intersect at a given point. We are going to use the values of x and y to find the point where these lines intersect.</p>
+            <p>Let’s talk through this problem before we solve it. We will enter guess values, as before, for both x and y. In cells B17 and B18 we will enter in Equations 1 and 2, respectively. Before we solve, we need to set an objective function to relate the two equations with each other. In this case, we can just add the two equations together, and will set it as our objective for it to equal zero. We will then be ready to solve. Our solutions should be x =0.857 and y =5.143 as can be estimated from the graph.</p>
+            <p>Before we use the Solver, we need to input the pre-requisite data into the worksheet that includes the guess values, the two equations, and the objective function that correlates the equations.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>In cell <span class="type-text">B14</span>, input a guess value of 1.</p>
+                </li>
+                <li>
+                    <p>In cell <span class="type-text">B15</span>, input a guess value of 5.</p>
+                </li>
+                <img src="images/solver-math-two-1.PNG" alt="Cells B14 and B15 with guess values">
+                <li>
+                    <p>In cell <span class="type-text">B17</span>, input the equation <span class="type-text">=2.5*B14-B15+3</span> and press Enter.</p>
+                </li>
+                <li>
+                    <p>In cell <span class="type-text">B18</span>, input the equation <span class="type-text">=-B14-B15+6</span> and press Enter.</p>
+                </li>
+                <img src="images/solver-math-two-2.PNG" alt="Cells B17 and B18 with formula inputs">
+                <li>
+                    <p>In cell <span class="type-text">B20</span>, input the objective function <span class="type-text">=B17+B18</span>.</p>
+                </li>
+            </ol>
+            <p>Now that we have all the information entered into the worksheet, we can use the Solver to solve for x and y.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Click on Solver in the Data tab as before.</p>
+                </li>
+                <li>
+                    <p>Click Reset All to start over.</p>
+                </li>
+                <li>
+                    <p>Input the following into the forms:</p>
+                    <ol class="instruction-list">
+                        <li>
+                            <p>Set Objective: <span class="type-text">$B$20</span></p>
+                        </li>
+                        <li>
+                            <p>To: Value Of: 0</p>
+                        </li>
+                        <li>
+                            <p>By Changing Variable Cells: <span class="type-text">$B$14:$B$15</span></p>
+                        </li>
+                        <li>
+                            <p>Solving Method: Simplex LP</p>
+                        </li>
+                    </ol>
+                </li>
+                <img src="images/solver-math-two-3.PNG" alt="Completed Solver Parameters screen">
+                <li>
+                    <p>Click Solve.</p>
+                </li>
+                <li>
+                    <p>A dialogue box will prompt you to either keep or discard the solution. Click OK to keep it.</p>
+                </li>
+            </ol>
+            <p>Solver found a solution for our objective function equal to zero (and may have found one different than above), but it is still not quite what we want. Notice that our equations in cells B17 and B18 are not equal to zero. We can make one simple addition in our Solver window to correct this problem.</p>
+            <img src="images/solver-math-two-4.PNG" alt="Generated equation solutions in respective cells">
+            <ol class="instruction-list">
+                <li>
+                    <p>Select Solver</p>
+                </li>
+                <li>
+                    <p>In the Subject to the Constraints field, click Add.</p>
+                    <p>We must set one of these equations equal to zero.</p>
+                </li>
+                <img src="images/solver-math-two-5.PNG" alt="Subject to Contraints field with Add button highlighted">
+                <li>
+                    <p>Input the following in the Add Constraint box:</p>
+                    <ol class="instruction-list">
+                        <li>
+                            <p>Cell Reference: <span class="type-text">$B$17</span> or <span class="type-text">$B$18</span></p>
+                        </li>
+                        <li>
+                            <p>Operator: =</p>
+                        </li>
+                        <li>
+                            <p>Constraint: 0</p>
+                        </li>
+                    </ol>
+                </li>
+                <img src="images/solver-math-two-6.PNG" alt="Completed Change Constraint screen">
+                <li>
+                    <p>Click OK.</p>
+                </li>
+                <li>
+                    <p>Click Solve and then OK once again.</p>
+                </li>
+            </ol>
+            <img src="images/solver-math-two-7.PNG" alt="Generated equation solutions in respective cells">
+            <p>We can now see that by adding one constraint, Solver found a solution all of our requirements:
+                <br> &emsp;&emsp;&emsp;Equation 1 = Equation 2 = Equation 1 + Equation 2 = 0</p>
+            <p>As seen in this example, you could say that Solver is not always accurate in solving sets of equations. In reality, Solver is correct but you did not completely constrain the problem in the way you meant. Make sure to always double check your work after a solution is reached (hence the graph).</p>
+            <h2>Practical Nonlinear Example</h2>
+            <p>In this last example, we will look at a practical application for Solver. In this case, we own a small business with 4 employees providing a computer repair service and charge our customers $30 per job. Each employee is paid a wage shown below:</p>
+            <p>The Jobs column indicates how many jobs each employee completed during the month. The Earnings column is the total earning of each worker, simply the Wage column multiplied by the Jobs column.</p>
+            <p>Firstly, set up the formulas and functions to complete the Total Jobs, Total Wages, Revenue, and Profit cells.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>In cell <span class="type-text">C31</span>, type the function <span class="type-text">=SUM(C26:C29)</span> and press Enter.</p>
+                </li>
+                <li>
+                    <p>In cell <span class="type-text">C33</span>, type the function <span class="type-text">=SUM(D26:D29)</span> and press Enter.</p>
+                </li>
+                <li>
+                    <p>In cell <span class="type-text">C35</span>, type the formula <span class="type-text">=C31*H27</span> and press Enter.</p>
+                    <p>Calculate the profit by subtracting the wages from the revenue.</p>
+                </li>
+                <li>
+                    <p>In cell <span class="type-text">C37</span>, type the formula <span class="type-text">=C35–C33</span> and press Enter.</p>
+                </li>
+            </ol>
+            <img src="images/solver-jobs-1.PNG" alt="Filled out C31, C33, C35, and C37 cells">
+            <p>We now have a multitude of variables to change to try to optimize our business. We are going to determine the optimal price to charge our customers by setting the following constraints:</p>
+            <ul>
+                <li>
+                    <p>Each employee completes at least 5 jobs per month</p>
+                </li>
+                <li>
+                    <p>Minimum Total Profit of $700</p>
+                </li>
+                <li>
+                    <p>No more than 30 total jobs every month</p>
+                </li>
+            </ul>
+            <ol class="instruction-list">
+                <li>
+                    <p>Select Solver in the Analyze panel of the Data tab.</p>
+                </li>
+                <div class="sidebar-note">
+                    <h2>Cell Selection</h2>
+                    <p>Non-adjacent cells can be selected together by holding the Control or Command button on your keyboard and making selections. Here, cell <span class="type-text">H27</span> can be selected with <span class="type-text">C26:C29</span> using the above method.</p>
+                </div>
+                <li>
+                    <p>Click Reset All.</p>
+                </li>
+                <img src="images/solver-jobs-2.PNG" alt="Completed Solver Parameters screen">
+                <li>
+                    <p>Input the following into the forms:</p>
+                    <ol class="instruction-list">
+                        <li>
+                            <p>Set Objective: <span class="type-text">$C$37</span></p>
+                        </li>
+                        <li>
+                            <p>To: Value Of: 700</p>
+                        </li>
+                        <li>
+                            <p>By Changing Variable Cells: <span class="type-text">$C$26:$C$29,$H$27</span></p>
+                        </li>
+                        <li>
+                            <p>Solving Method: GRG Nonlinear</p>
+                        </li>
+                        <li>
+                            <p>Contraints:</p>
+                        </li>
+                        <ul>
+                            <li>
+                                <p><span class="type-text">$C$26:$C$29 = integer</span></p>
+                            </li>
+                            <img src="images/solver-jobs-3.PNG" alt="Example of Add Constraint screen with integer constraint addition">
+                            <li>
+                                <p><span class="type-text">$C$26:$C$29 >= 5</span></p>
+                            </li>
+                            <li>
+                                <p><span class="type-text">$C$31 &lt;= 30</span></p>
+                            </li>
+                        </ul>
+                    </ol>
+                </li>
+                <li>
+                    <p>Click Solve followed by OK.</p>
+                </li>
+            </ol>
+            <p>We added a few contraints to make sure our solution is valid and not nonsensical. The first contraint specifies that the number of jobs has to be an integer, that is, we want the job number rounded off to the next whole number as one cannot perform 3.45 jobs, for example.</p>
+            <img src="images/solver-jobs-4.PNG" alt="Generated Solver solutions in their respective cells">
+            <p>All of our conditions have been met and we can see that we need to charge our customer $38.98 per job. Note that often times multiple solutions are possible and that you may get different answers while running the same problem. You can always add additional constraints until you get an answer that best fits your needs.</p>
+            </section>
+            
+            <section class= "topic">
+            <h1>Analysis ToolPak</h1>
+            <p>In addition to Solver, we've added the Analysis ToolPak add-on. This add-on allows for financial, scientific and statistical data analysis. Switch to the worksheet named Aerobic Activity for this section.</p>
+            <p>This file is an example of a hypothetical study of the connection between an individual’s BMI (body mass index) and hours of aerobic activity per week. The given information in the table includes the individual’s gender, weight before exercise and their current hours spent doing aerobic activity per week. We'll be using this data to demonstrate the use of a couple of Analysis ToolPak tools.</p>
+            <h2>Descriptive Statistics</h2>
+            <p>The first analysis we will perform on our data is calculating some general statistical information using Descriptive Statistics from the Analysis ToolPak. We can get information such as the mean, median, mode, etc. very quickly with this tool.</p>
+            <ol class="instruction-list">
+               <li>
+                   <p>Switch to the Statistics worksheet.</p>
+               </li>
+                <li>
+                    <p>Select Data Analysis from the Analyze panel on the Data tab.</p>
+                </li>
+                <div class="tool-reference">
+                    <h3>Data Analysis</h3>
+                    <img src="images/reference-data-analysis.png" alt="Data Analysis tool icon">
+                    <p>The Data Analysis tool comes as part of the Analysis ToolPak add-on. This tool is good for running common financial, statistical, and scientific data analyses.</p>
+                </div>
+                <li>
+                    <p>Select Descriptive Statistics and click OK.</p>
+                </li>
+                <img src="images/analysis-dstat-1.PNG" alt="Data Analysis screen with Descriptive Statistics highlighted">
+                <li>
+                    <p>In the Input Range form, enter $E$2:$G$32</p>
+                </li>
+                <li>
+                    <p>Leave the Columns radio button check for the Grouped By option.</p>
+                </li>
+                <li>
+                    <p>Enter "Descriptive-Stats" in the New Worksheet Ply form</p>
+                </li>
+                <li>
+                    <p>Select the Summary statistics checkbox and click OK.</p>
+                </li>
+            </ol>
+            <img src="images/analysis-dstat-2.PNG" alt="Filled out Descriptive Statistics options screen">
+            <p>A table with the relevant statistical information will be displayed in the Descriptive-Stats worksheet. Below is the table we should see, but formatted for ease of reading. We may format our table similarly.</p>
+            <img src="images/analysis-dstat-3.PNG" alt="Descriptive Statistics table output">
+            <h2>Histograms</h2>
+            <p>Another valuable tool when looking at statistics is the histogram. Histograms are useful when looking for a visual representation of frequency of data, in other word, in other words, the number of occurences of a specific value. Switch to the Aerobic Activity worksheet for this exercise.</p>
+            <p>First we need to create a range for the data to be plotted on the histogram. We will call this the "Bin."</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>In cell <span class="type-text">J12</span>, type Bin. This will be the label of our "bin" column.</p>
+                </li>
+                <li>
+                    <p>In cell <span class="type-text">J13</span>, enter 15.</p>
+                </li>
+                <li>
+                    <p>In cell <span class="type-text">J14</span>, enter 20.</p>
+                </li>
+                <img src="images/analysis-hist-1.PNG" alt="Bin list ranging from 15-50 increasing in increments of 5">
+                <li>
+                    <p>Use Autofill to fill up a column of values from 15 to 50 in increments of 5.</p>
+                </li>
+            </ol>
+            <p>Excel will now group data, for example, everything greater than 40 and less than or equal to 45 will be accounted for in the 45 bar of the histogram. Let us go ahead and create the histogram now.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Select Data Analysis from the Analyze panel on the Data tab.</p>
+                </li>
+                <li>
+                    <p>Select Histogram and click OK.</p>
+                </li>
+                <img src="images/analysis-hist-2.PNG" alt="Data Analysis screen with Histogram highlighted">
+                <li>
+                    <p>In the Input Range form, enter <span class="type-text">G2:G32</span>.</p>
+                </li>
+                <li>
+                    <p>In the Bin Range form, enter <span class="type-text">J12:J18</span>.</p>
+                </li>
+                <li>
+                    <p>Check the Labels checkbox</p>
+                </li>
+                <li>
+                    <p>Type "Histogram" in the New Worksheet Ply form under Output options to create the histogram in a new worksheet with that name.</p>
+                </li>
+                <li>
+                    <p>Check Chart Output to display a chart of the data and click OK.</p>
+                </li>
+                <img src="images/analysis-hist-3.PNG" alt="Filled out Histogram options screen">
+            </ol>
+            <p>The grouped data with along its corresponding frequencies and the histogram chart will be displayed in the Histogram worksheet.</p>
+            <img src="images/analysis-hist-4.PNG" alt="Output table and histogram graph">
+            <p>The Office support webpage, linked <a href="https://support.office.com/en-us/article/Use-the-Analysis-ToolPak-to-perform-complex-data-analysis-6C67CCF0-F4A9-487C-8DEC-BDB5A2CEFAB6"><b>here</b></a> has information on all the available Analysis ToolPak tools for your reference.</p>
+            </section>
+    <section class="topic">
+        <h1>Analyze Your Budget</h1>
+        <p>Now, using what you’ve learned in this course, we have an extra project for you to complete to get extra experience with data analysis in Excel using a real-life example. This section includes a walkthrough tutorial for creating your own budget spreadsheet based on your expenses and using the tools featured in this manual to analyze your spending.</p>
+        <h2>Monthly Expense Table</h2>
+        <p>First, we’re going to make a worksheet with a template to track expenses over one month as they come in. You can start off just making one, but if you wanted to analyze multiple months, you could copy and paste the template you create to keep track of several months in the same sheet.</p>
+        <ol class="instruction-list">
+            <li>
+                <p>Open up a new workbook in Excel.</p>
+            </li>
+            <img src="images/activityprompt-1.png" alt="Blank worksheet option in file tab of Excel">
+            <li>
+                <p>Right click on the worksheet tab on the bottom of the screen and select Rename to name it "Monthly Spending" or something similar.</p>
+            </li>
+            <img src="images/activityprompt-2.png" alt="Rename sheet option">
+            <li>
+               <p>Now, make a table with four columns:</p>
+                <ol class="instruction-list">
+                    <li>
+                        <p>Date</p>
+                    </li>
+                    <li>
+                        <p>Type of expense</p>
+                    </li>
+                    <li>
+                        <p>Amount</p>
+                    </li>
+                    <li>
+                        <p>Expense description</p>
+                    </li>
+                </ol>
+            </li>
+            <div class="sidebar-note">
+                <p>Don’t neglect the use of the “Home” tab options when making your table! Experiment with the formatting tools you know from Excel 1 to create a table that looks pleasing to you. Using different colors and fonts in your tables can make things much more readable for yourself.</p>
+            </div>
+            <img src="images/activityprompt-3.png" alt="Table with four columns">
+            <p>Make the columns as long as you feel necessary. You want the table to be large enough to track every expense you have in an average month.</p>
+            <li>
+                <p>Now apply a drop-down list rule to the "Type of expense" column you've just made using data validation.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Select all the cells in the “Type of expense” column.</p>
+                </li>
+                <li>
+                    <p>Click on the Data Validation tool.</p>
+                </li>
+                <li>
+                    <p>In the Allow drop-down, select List.</p>
+                </li>
+                <li>
+                    <p>For Source, enter in categories you'd like to divide your expenses into, making sure to separate each with a comma, as shown in the sample picture.</p>
+                </li>
+                <img src="images/activityprompt-4.png" alt="Category list in the Source field, separated by commas">
+                <li>
+                    <p>Hit Ok</p>
+                </li>
+            </ol>
+            <p>You should now be able to select the expense type as you're entering them from a drop-down list.</p>
+            <img src="images/activityprompt-5.png" alt="Drop-down list in expenses column of table">
+            <li>
+                <p>In the row under your table, include a place to sum your total expenses for the month under the “Amount” column.</p>
+            </li>
+            <img src="images/activityprompt-6.png" alt="Total cell with adjacent blank cell for entering total value">
+            <li>
+                <p>Now, with your completed table, fill in your real expenses from any given month, or fill in hypothetical data.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Select all the cells in your "Amount" column.</p>
+                </li>
+                <li>
+                    <p>Right click somewhere within the selected range and choose Format cells...</p>
+                </li>
+                <div class="sidebar-note">
+                    <h2>Format cells...</h2>
+                    <p>The Format cells... menu is a quick way to format all of the cells in a selected range. This extends to formatting currency, time, date, and much more.</p>
+                </div>
+                <img src="images/activityprompt-7.png" alt="Highlighted Format cells... option">
+                <li>
+                    <p>From Category, choose Currency.</p>
+                </li>
+                <img src="images/activityprompt-8.png" alt="Highlighted Currency option from Format cells... menu">
+                <li>
+                    <p>Hit Ok</p>
+                </li>
+                <p>When you enter values into the Amount column, they should automatically be formatted as currency without you having to type in a dollar sign yourself, as a way to make things quicker.</p>
+            </ol>
+            </li>
+            <li>
+                <p>Finally, in the Total cell you created, use the SUM=() function to sum the month’s expenses. Note, your cell values will not be the same as the picture’s.</p>
+            </li>
+            <img src="images/activityprompt-9.png" alt="SUM=() function being inputted in the Total area">
+        </ol>
+        <p>You should now have a finished expense sheet for one month! An example is depicted here, but yours will probably look much different. The important takeaway is the use of data validation and having some data to work with for the next part of the activity.</p>
+        <img src="images/activityprompt-10.png" alt="Completed expense sheet">
+        <h2>Spending Overview</h2>
+        <p>Now that you have a template for tracking your expenses in a month, let’s go ahead and practice using tools on some bigger-picture spending. In this part of the exercise we’ll be using the data from part one plus some more spending data to visualize a year’s worth of expenses.</p>
+        <ol class="instruction-list">
+            <li>
+                <p>On the bottom of the screen, click the + button to add a new worksheet to the workbook.</p>
+            </li>
+            <img src="images/activityprompt-11.png" alt="New worksheet option">
+            <li>
+                <p>Name this worksheet "Spending Overview" or something similar.</p>
+            </li>
+            <li>
+                <p>Create 12 columns, with the heading of each being a month Jan-Dec.</p>
+            </li>
+            <li>
+                <p>Insert your total from the previous worksheet under the correct month and fill out the rest of the months with spending values (again, these can be exact, estimates, or made up numbers).</p>
+            </li>
+            <img src="images/activityprompt-12.png" alt="Filled out Spent row of table">
+            <li>
+                <p>Create a histogram to analyze average monthly spending.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Make a Bin column somewhere on the spreadsheet.</p>
+                </li>
+                <li>
+                    <p>For the bins, choose numbers that make sense with your data. Choosing bins is essential to your histogram output. Your lowest bin should be a number smaller than the lowest monthly spending and you may want to increase in increments of $100 until you have a bin exceeding your most expensive month. An example is shown here.</p>
+                </li>
+                <img src="images/activityprompt-13.png" alt="Example Bin list">
+                <li>
+                    <p>Go to the Data tab, Data Analysis, and select Histogram.</p>
+                </li>
+                <li>
+                    <p>In Input Range, select the 12 cells with your total monthly expenses.</p>
+                </li>
+                <li>
+                    <p>In the Bin Range, highlight all the cells you just wrote for your bin.</p>
+                </li>
+                <li>
+                    <p>Select Output Range and choose a cell somewhere on the spreadsheet you'd like the histogram to show up in.</p>
+                </li>
+                <li>
+                    <p>Finally, make sure to check Chart Output.</p>
+                </li>
+                <img src="images/activityprompt-14.png" alt="Filled out Histogram options menu">
+                <li>
+                    <p>Click Ok</p>
+                </li>
+                <p>Now you should have a histogram that looks something like the example that gives you an idea of what your spending in a year looks like.</p>
+                <img src="images/activityprompt-15.png" alt="Histogram output">
+            </ol>
+            </li>
+        </ol>
+        <h2>Savings Goals</h2>
+        <p>In this final section of the activity, we’ll use a What-If table, Goal Seek, and Solver to take a look at savings goals based on the spending data we’ve just created.</p>
+        <ol class="instruction-list">
+            <li>
+                <p>Under the row with the money you spent in each month of the year, create a new row for the money earned each month and populate this row with income values for each month.</p>
+            </li>
+            <img src="images/activityprompt-16.png" alt="New income row in table with inputted income values">
+            <li>
+                <p>Add a third row for the money saved each month.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>In the first column of this row, calculate your savings for January by entering "=[EARNED CELL] - [SPENT CELL]".</p>
+                </li>
+                <img src="images/activityprompt-17.png" alt="Money saved formula for the month of January">
+                <li>
+                    <p>Click on this cell with your calculated January savings, click the green square in the bottom right corner, and use Autofill to determine your savings for the rest of the months of the year.</p>
+                </li>
+                <img src="images/activityprompt-18.png" alt="Autofilled money saved row in the yearly spending table">
+            </ol>
+            </li>
+            <li>
+                <p>Somewhere on the spreadsheet, create an empty table for a What-If analysis on the amount of money you save a month vs. how many months you save for. Think back to the manual example to get a feel for the formatting required here.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Create an "Amount Saved" column with a series of amounts of money you could realistically save per month.</p>
+                </li>
+                <li>
+                    <p>Now create a row with 12 cells numbered 1-12 for analyzing savings between one month and one year.</p>
+                </li>
+                <li>
+                    <p>On the top left of the table, leave a spot for a guess number.</p>
+                </li>
+                <p>Now you should have a complete table to run a What-If Analysis on. Again, take the time to format this table in a way that looks nice. Note your “Amount Saved” values don’t necessarily have to be the same as the example picture’s.</p>
+                <img src="images/activityprompt-19.png" alt="Empty What-If table">
+            </ol>
+            </li>
+            <li>
+                <p>Populate the table with a two-input What-If Analysis.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Create a “Monthly Savings” cell and <strong>fill it with a guess value that’s featured in your table.</strong></p>
+                </li>
+                <li>
+                    <p>Create a "Months" guess value as well.</p>
+                </li>
+                <img src="images/activityprompt-20.png" alt="Monthly Savings and Months cells with guess values">
+                <li>
+                    <p>Similarly, create a "Total Savings" cell by typing in a formula "=[MONTHLY SAVINGS CELL] * [MONTHS CELL]".</p>
+                </li>
+                <img src="images/activityprompt-21.png" alt="Total savings example calculation">
+                <li>
+                    <p>In the top left corner of your empty What-If table where you left a place for a guess, enter in "=[TOTAL SAVINGS CELL]".</p>
+                </li>
+                <img src="images/activityprompt-22.png" alt="Guess cell with formula to reference total savings cell">
+                <li>
+                    <p>Select your entire table.</p>
+                </li>
+                <img src="images/activityprompt-23.png" alt="Selected What-If Analysis table">
+                <li>
+                    <p>Go to the Data tab in the Excel ribbon, What-If Analysis panel, and select Data Table.</p>
+                </li>
+                <li>
+                    <p>For Row input cell, select your Monthly Savings cell.</p>
+                </li>
+                <li>
+                    <p>In Column input cell, select your Months cell.</p>
+                </li>
+                <img src="images/activityprompt-24.png" alt="Filled out Data Table menu">
+                <li>
+                    <p>Hit Ok</p>
+                </li>
+                <p>You should have a completed What-If Analysis on how much money you could save over time based on what you save monthly vs. the amount of months you save for.</p>
+                <img src="images/activityprompt-25.png" alt="Filled out What-If table">
+            </ol>
+            </li>
+            <li>
+                <p>Let’s say you want to save $200 for a concert coming up in a year. Use Goal Seek to figure out how much money you’ll need to save for specifically this purpose if you want to have enough by the end of the year.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Go to the Data tab, What-If Analysis panel, and select Goal Seek.</p>
+                </li>
+                <li>
+                    <p>For Set cell, select your Total Savings cell from before.</p>
+                </li>
+                <li>
+                    <p>In the To field, enter "200".</p>
+                </li>
+                <li>
+                    <p>Finally, in the By changing cell field, select your Monthly Savings cell from earlier.</p>
+                </li>
+                <img src="images/activityprompt-26.png" alt="Filled out Goal Seek options">
+                <p>Your Monthly Savings cell should now have changed to the value you would need to set aside for the concert each month to be saved up in 12 months’ time.</p>
+                <div class="sidebar-note">
+                    <h2>Something to Consider</h2>
+                    <p>Because this is a self-guided activity you're providing your own values for, there's no answer key. In this case and any other time you're running data analysis calculations, it's important to check to make sure the answer you got makes sense. Does your Goal Seek value make sense? How do you know that?</p>
+                </div>
+                <img src="images/activityprompt-27.png" alt="New calculated value in Monthly Savings cell">
+            </ol>
+            </li>
+            <li>
+                <p>Now double check the result you just got with Goal Seek by using Solver for the same purpose.</p>
+            <ol class="instruction-list">
+                <li>
+                    <p>Reset the Goal Seek you just did by returning the Monthly Savings cell to its original guess value.</p>
+                </li>
+                <li>
+                    <p>Select Solver from the Data tab.</p>
+                </li>
+                <li>
+                    <p>Set Objective to the Total Savings cell.</p>
+                </li>
+                <li>
+                    <p>Enter a To value of "200".</p>
+                </li>
+                <li>
+                    <p>In the By Changing Variable Cells field, select the Monthly Savings cell.</p>
+                </li>
+                <li>
+                    <p>Select a Simplex LP solving method.</p>
+                </li>
+                <img src="images/activityprompt-28.png" alt="Filled out Solver options screen">
+                <li>
+                    <p>Hit Solve</p>
+                </li>
+                <p>You should find that Solver returned the same result as Goal Seek gave you. 
+                Now that you’ve had more experience with these common Excel data analysis tools, can you think of other practical uses you could have for these tools?</p>
+            </ol>
+            </li>
+        </ol>
+    </section>
+    </body>
+</html>
